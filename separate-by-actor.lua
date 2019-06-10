@@ -15,7 +15,12 @@ function main(subtitles)
     -- body
     num_lines = subtitles.n;
     --aegisub.debug.out("Number of rows in ass file: %d",num_lines);
-    aegisub.log("Number of rows in ass file: %d",num_lines);
+    for i=1,num_lines,1 do
+        --aegisub.log("%s \n",subtitles[i].class);
+        if subtitles[i].class == "dialogue" then 
+            aegisub.log("%d.\n%s\n\n", i, subtitles[i].raw);
+        end
+    end
 
 end
 
