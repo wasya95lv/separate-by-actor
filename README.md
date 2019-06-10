@@ -1,2 +1,2 @@
-# separete-by-actor
+# separate-by-actor
 In development
