@@ -91,14 +91,26 @@ function getSeperatedSubtitles(subtitles, actors)
     --[[Filling subtables of subtitlesByActor with 
         subtitle rows selcted by actor]]
     for i = 1, #subtitles, 1 do
-        for actor in actors do
+        for actor in pairs(actors) do
             if string.find(subtitles[i].actor, actors[actor]) then
-               --table.insert( subtitlesByActor[], [pos,] value )
+               table.insert(subtitlesByActor[ actors[actor] ], subtitles[i])
             end
         end
     end
 
     return subtitlesByActor
+end
+
+
+function convertAllRows(seperatedSubtitles)
+    for actor in pairs(seperatedSubtitles) do
+        
+    end
+end
+
+
+function writeSrts(redySubtitles)
+    
 end
 
 
